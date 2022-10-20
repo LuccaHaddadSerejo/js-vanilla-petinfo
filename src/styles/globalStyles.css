@@ -19,6 +19,33 @@
   --alert100: "hsl(349, 57%, 50%)";
   --alert200: "hsl(349, 69%, 55%)";
   --sucess100: "hsl(162, 88%, 26%)";
+
+  --font-size-1: 32px;
+  --font-size-2: 24px;
+  --font-size-3: 20px;
+  --font-size-4: 16px;
+  --font-size-5: 14px;
+
+  --font-weigth-1: 600;
+  --font-weigth-2: 500;
+  --font-weigth-3: 400;
+
+ 
+
+  --line-height-1: 48px;
+  --line-height-2: 36px;
+  --line-height-3: 30px;
+  --line-height-4: 24px;
+  --line-height-5: 21px;
+  --line-height-6: 150%;
+
+  --radius-1:8px;
+  --radius-2:4px;
+}
+
+.container{
+  max-width: 1400px;
+  height: 100vh;
 }
 
 body {
