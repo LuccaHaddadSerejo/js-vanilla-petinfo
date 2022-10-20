@@ -4,43 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+    <link rel="stylesheet" href="./src/styles/inputs.css">
+    <link rel="stylesheet" href="./src/styles/modal.css">
+    <link rel="stylesheet" href="./src/styles/displays.css">
+    <link rel="stylesheet" href="./src/styles/globalStyles.css">
+    <link rel="stylesheet" href="./src/pages/login/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <title>Petinfo - Login</title>
 </head>
 <body>
-    <main class="main">
+    <main class="main flex_row align_center justify_center container">
         <section class="section-1">
-            <div class="section-1_div-1">
+            <div class="section-1_div-1 flex_column">
                 <h1 class="main_title">Petinfo</h1>
-                <p class="section-1_paragraph-1">Amor e carinho por meio do conhecimento</p>
+                <p class="section-1_paragraph-1"><span class="title_color-2">Amor</span> e <span class="title_color-2">carinho</span> por meio do conhecimento</p>
+                <div class="section-1_div-1_div-1">
                 <p class="section-1_paragraph-2">Todas as informações para melhorar a vida do seu pet em um só lugar</p>
+                </div>
                 <div class="section-1_div-2">
-                    <img class="section-1_img" src="./src/pages/login/assets/img/Rectangle 2.svg" alt="">
-                    <img class="section-1_img" src="./src/pages/login/assets/img/Rectangle 3.svg" alt="">
-                    <img class="section-1_img" src="./src/pages/login/assets/img/Rectangle 4.svg" alt="">
-                    <img class="section-1_img" src="./src/pages/login/assets/img/Rectangle 5.svg" alt="">
+                    <img class="section-1_img-1" src="./src/pages/login/assets/img/Rectangle 2.svg" alt="">
+                    <img class="section-1_img-2" src="./src/pages/login/assets/img/Rectangle 3.svg" alt="">
+                    <img class="section-1_img-3" src="./src/pages/login/assets/img/Rectangle 4.svg" alt="">
+                    <img class="section-1_img-4" src="./src/pages/login/assets/img/Rectangle 5.svg" alt="">
                 </div>
             </div>
         </section>
         <section class="section-2">
-            <div class="section-2_div-1">
+            <div class="section-2_div-1 flex_column">
                 <h3 class="section-2_title">Login</h3>
-                <form class="login_form">
-                    <label for="inputText">Email</label>
-                    <input class="section-2_form_email" type="text" name="inputText" placeholder="Digite seu email aqui...">
-                    <span class="email_error">O email está incorreto</span>
+                <form class="flex_column login_form">
+                    <label class="label_form" for="inputText">Email</label>
+                    <input class="input section-2_form_email" type="text" name="inputText" placeholder="Digite seu email aqui...">
+                    <span class="email_error hidden">O email está incorreto</span>
 
-                    <label for="inputPassword">Senha</label>
-                    <input class="section-2_form_password" type="password" name="inputPassword" placeholder="Digite sua senha aqui...">
-                    <span class="password_error">A senha está incorreta</span>
+                    <label class="label_form" for="inputPassword">Senha</label>
+                    <input class="input section-2_form_password" type="password" name="inputPassword" placeholder="Digite sua senha aqui...">
+                    <span class="password_error hidden">A senha está incorreta</span>
 
-                    <button type="submit" class="btn_form_login">Acessar</button>
+                    <button type="submit" class="button login_register-btn btn_form_login">Acessar</button>
                 </form>
                 <div class="section-2_div-2">
                     <span class="section-2_div-2_span">Ainda não possui conta?</span>
-                    <p class="section-2_div-2_paragraph">Clicando no botão abaixo, você pose se cadastrar rapidamente.</p>
-                    <button class="btn_register">Cadastrar</button>
-                </div>
-            </div>
+                    <p class="section-2_div-2_paragraph">Clicando no botão abaixo, você pode se cadastrar rapidamente.</p>      
+                </div>       
+            </div>   
+            <button class="button page_change-btn btn_register">Cadastrar</button>     
         </section>
     </main>
     <script type="module" src="./src/pages/login/index.js"></script>

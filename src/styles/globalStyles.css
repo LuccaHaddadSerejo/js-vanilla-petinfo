@@ -2,23 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 :root {
-  --brand100: "hsl(230, 57%, 50%)";
-  --brand200: "hsl(230, 68%, 54%)";
-  --gray100: "hsl(210, 11%, 15%)";
-  --gray200: "hsl(210, 10%, 23%)";
-  --gray300: "hsl(210, 9%, 31%)";
-  --gray400: "hsl(210, 7%, 56%)";
-  --gray500: "hsl(210, 11%, 71%)";
-  --gray600: "hsl(210, 16%, 93%)";
-  --gray700: "hsl(210, 17%, 95%)";
-  --gray800: "hsl(210, 17%, 98%)";
-  --gray900: "hsl(200, 100%, 99%)";
-  --alert100: "hsl(349, 57%, 50%)";
-  --alert200: "hsl(349, 69%, 55%)";
-  --sucess100: "hsl(162, 88%, 26%)";
+  --brand100: #364FC7;
+  --brand200: #3B56D9;
+  --gray100: #212529;
+  --gray200: #343A40;
+  --gray300: #495057;
+  --gray400: #868E96;
+  --gray500: #ADB5BD;
+  --gray600: #E9ECEF;
+  --gray700: #F1F3F5;
+  --gray800: #F8F9FA;
+  --gray900: #FCFEFF;
+  --alert100: #C73650;
+  --alert200: #DB3C58;
+  --sucess100: #087F5B;
 
   --font-size-1: 32px;
   --font-size-2: 24px;
@@ -29,8 +30,6 @@
   --font-weigth-1: 600;
   --font-weigth-2: 500;
   --font-weigth-3: 400;
-
- 
 
   --line-height-1: 48px;
   --line-height-2: 36px;
@@ -44,10 +43,10 @@
 }
 
 .container{
-  max-width: 1400px;
-  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-body {
-  font-family: "Inter, sans-serif";
+.hidden{
+  display: none;
 }

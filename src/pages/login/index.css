@@ -1,83 +1,137 @@
 .main{
-
+    margin: 0 auto;
 }
 
 .section-1{
-
+    width: 30%;
+    margin-right: 41px;
 }
 
 .section-1_div-1{
-    
+    gap: 24px;
 }
 
 .main_title{
-    
+    font-weight: var(--font-weigth-1);
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-6);
+}
+
+.title_color-2{
+    color: var(--brand100);
 }
 
 .section-1_paragraph-1{
-    
+    font-weight: var(--font-weigth-1);
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-6);
 }
 
+.section-1_div-1_div-1{
+    max-width: 80%;
+}
+
+
 .section-1_paragraph-2{
-    
+    font-weight: var(--font-weigth-3);
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-6);
 }
 
 .section-1_div-2{
-    
+    position: relative;
 }
 
-.section-1_img{
-    
+.section-1_img-1{
+}
+
+.section-1_img-2{
+    position: relative;
+    left: 15px;
+}
+
+.section-1_img-3{
+    position: absolute;
+    left: 0;
+    top: 110px;
+}
+
+.section-1_img-4{
+    position: absolute; 
+    right: 115px;
 }
 
 .section-2{
-    
+    width: 30%;
+    border: 1px solid var(--gray600);
+    background-color: var(--gray900);
+    padding: 44px 24px;
+    height: 600px;
 }
 
 .section-2_div-1{
-    
+    gap: 26px;
+    margin-bottom: 42px;
 }
 
 .section-2_title{
-    
+    font-weight: var(--font-weigth-2);
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-6);
+    color: var(--gray100);
+}
+
+.label_form{
+    font-weight: var(--font-weigth-2);
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-6);
+    color: var(--gray100);
 }
 
 .login_form{
-    
+    gap: 26px;
 }
 
 .section-2_form_email{
-    
+    margin-top: -14px;
 }
 
 .email_error{
-
+    margin-top: -14px;
 }
 
 .section-2_form_password{
-    
+    margin-top: -14px;
 }
 
 .password_error{
-
+    margin-top: -14px;
 }
 
 .btn_form_login{
-    
 }
 
 .section-2_div-2{
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.section-2_div-2_span{
-    
+.section-2_div-2_spa{
+    font-weight: var(--font-weigth-2);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-6);
+    color: var(--gray100);
 }
 
 .section-2_div-2_paragraph{
-    
+    font-weight: var(--font-weigth-3);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-6);
+    color: var(--gray300);
+    text-align: center;
 }
 
 .btn_register{
-    
 }

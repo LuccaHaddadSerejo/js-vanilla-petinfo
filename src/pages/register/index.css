@@ -1,77 +1,129 @@
 .main{
-
+    margin: 0 auto;
 }
 
 .section-1{
-
+    width: 30%;
+    margin-left: 61px;
 }
 
 .section-1_div-1{
-
+    gap: 24px;
 }
 
 .main_title{
-
+    font-weight: var(--font-weigth-1);
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-6);
 }
 
 .section-1_paragraph-1{
+    color: var(--brand100);
+    font-weight: var(--font-weigth-1);
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-6);
+}
 
+.section-1_div-1{
+    width: 90%;
 }
 
 .section-1_paragraph-2{
-
+    font-weight: var(--font-weigth-3);
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-6);
 }
+
 
 .section-1_div-2{
-
+    position: relative;
 }
 
-.img{
+.section-1_img-1{
+}
 
+.section-1_img-2{
+    position: relative;
+    bottom: 110px;
+    left: 12px;
+}
+
+.section-1_img-3{
+    position: absolute;
+    right: 35px;
+    top: 110px;
+}
+
+.section-1_img-4{
+    position: relative;
+    left: 25px;
+    bottom: 110px;
 }
 
 .section-2{
-
+    width: 30%;
+    border: 1px solid var(--gray600);
+    background-color: var(--gray900);
+    padding: 44px 24px;
+    height: 672px;
 }
 
 .section-2_div-1{
-
+    gap: 26px;
+    margin-bottom: 42px;
 }
 
 .section-2_div-2{
+    width: 100%;
+    
+}
 
+.teste{
+    background-color: red;
 }
 
 .section-2_title{
-
+    font-weight: var(--font-weigth-2);
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-6);
+    color: var(--gray100);
 }
 
 .section-2_div-2_btn{
-
+    width: 156px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
 }
 
 .register_form{
+    gap: 26px;
+}
 
+.label_form{
+    font-weight: var(--font-weigth-2);
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-6);
+    color: var(--gray100);
 }
 
 .section-2_form_user{
-
+    margin-top: -14px;
 }
 
 .section-2_form_email{
-
+    margin-top: -14px;
 }
 
 .section-2_form_photo{
-
+    margin-top: -14px;
 }
 
 .section-2_form_password{
-
+    margin-top: -14px;
 }
 
 .section-2_form_btn{
-
 }
 
 .section-2_btn{
