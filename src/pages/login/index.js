@@ -1,8 +1,9 @@
-import {register, login} from "../../scripts/api.js";
+import {login} from "../../scripts/api.js";
 
 const userLogin = () =>{
-    const form = document.getElementById('formLogin')
-    const elements = [...form.elements]
+    const form = document.getElementById('testId')
+    const htmlElements = [...form.elements]
+    console.log(htmlElements)
     
 
     form.addEventListener('submit', async (event)=>{
@@ -10,7 +11,7 @@ const userLogin = () =>{
    
         let body = {}
 
-        elements.forEach(elt =>{
+        htmlElements.forEach(elt =>{
             if(elt.tagName == "INPUT" && elt.value !== 0)
             body[elt.id] = elt.value
             elt.value = ''
@@ -28,21 +29,8 @@ const changePageToRegister = () =>{
     })
 }
 
-const inputErrors = () =>{
-    const loginError = document.querySelector('.password_error')
-    const inputEmail = document.getElementById('email')
-    const inputPassword = document.getElementById('password')
-    inputEmail.classList.add('input_error')
-    inputPassword.classList.add('input_error')
-    loginError.classList.remove('hidden')
-    setTimeout(() => {
-        loginError.classList.add('hidden')
-        inputEmail.classList.remove('input_error')
-        inputPassword.classList.remove('input_error')
-      }, 5000);
-}
 
-const validateLogin = () =>{
+const validateInputs = () =>{
     let newArr = []
     const inputEmail = document.getElementById('email')
     const inputPassword = document.getElementById('password')
@@ -62,9 +50,7 @@ const validateLogin = () =>{
     })
 }
 
-
-validateLogin()
+validateInputs()
 userLogin()
 changePageToRegister()
 
-export {inputErrors}

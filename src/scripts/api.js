@@ -1,11 +1,10 @@
-import { inputErrors } from "../pages/login/index.js"
 import { spinnerFunc } from "./spinner.js"
 import { createToast } from "./toast.js"
 
 let baseUrl = 'http://localhost:3333/'
 
 async function login(object){
-    spinnerFunc('btnLogin')
+    spinnerFunc('btnLogin', 'Acessar')
     try{
         let data = await fetch(`${baseUrl}login`, {
             method: "POST",
@@ -23,8 +22,17 @@ async function login(object){
           }, 3000);
     }else{
         createToast('Usuário não encontrado', 'Crie uma conta em nosso site: ')
-        inputErrors()
-          btn.innerText = 'Acessar'
+        const loginError = document.querySelector('.password_error')
+        const inputEmail = document.getElementById('email')
+        const inputPassword = document.getElementById('password')
+        inputEmail.classList.add('input_error')
+        inputPassword.classList.add('input_error')
+        loginError.classList.remove('hidden')
+        setTimeout(() => {
+            loginError.classList.add('hidden')
+            inputEmail.classList.remove('input_error')
+            inputPassword.classList.remove('input_error')
+          }, 5000);
         console.log("Usuário não encontrado")
     }
     }catch(err){
@@ -34,7 +42,7 @@ async function login(object){
 
 
 async function register(object){
-    spinnerFunc('btnRegister')
+    spinnerFunc('btnRegister', 'Cadastrar')
     try{
         let data = await fetch(`${baseUrl}users/create`, {
             method: "POST",

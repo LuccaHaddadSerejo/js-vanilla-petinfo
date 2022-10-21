@@ -1,7 +1,7 @@
 import {register} from "../../scripts/api.js";
 
 const registerEvent = () =>{
-    const form = document.getElementById('registerForm')
+    const form = document.getElementById('registerTesting')
     const htmlElements = [...form.elements]
 
     form.addEventListener('submit', async (event) =>{
