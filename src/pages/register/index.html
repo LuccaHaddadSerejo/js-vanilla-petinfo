@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="../../styles/inputs.css">
     <link rel="stylesheet" href="../../styles/modal.css">
     <link rel="stylesheet" href="../../styles/displays.css">
+    <link rel="stylesheet" href="../../styles/toast.css">
     <link rel="stylesheet" href="../../styles/globalStyles.css">
     <link rel="stylesheet" href="./index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <title>Pet Info - Register</title>
 </head>
-<body>
-    <main class="main  flex_row_reverse align_center justify_center container">
+<body class="body">
+    <main class="main  flex_row_reverse align_center justify_center container-2">
         <section class="section-1">
             <div class="section-1_div-1 flex_column">
                 <h1 class="main_title">Petinfo</h1>
@@ -36,28 +36,28 @@
             </div>
         </section>
         <section class="section-2">
-            <div class="section-2_div-1 flex_column">
+            <div id="formWrapper" class="section-2_div-1 flex_column">
                 <div class="section-2_div-2 flex_row justify_between">
                     <h3 class="section-2_title">Cadastro</h3>
-                    <button class="button page_change-btn section-2_div-2_btn">Voltar para o login</button>
+                    <button id="changePageOne" class="button page_change-btn section-2_div-2_btn">Voltar para o login</button>
                 </div> 
-                <form class="register_form flex_column">
+                <form id="registerForm" class="register_form flex_column">
                     <label class="label_form" for="inputUser">Usuário</label>
-                    <input class="input section-2_form_user" type="text" name="inputUser" placeholder="Digite seu usuário aqui...">
+                    <input class="input section-2_form_user" type="text" name="inputUser" id="username" placeholder="Digite seu usuário aqui...">
 
                     <label class="label_form" for="inputEmail">Email</label>
-                    <input class="input section-2_form_email" type="text" name="inputEmail" placeholder="Digite seu email aqui...">
+                    <input class="input section-2_form_email" type="text" name="inputEmail" id="email" placeholder="Digite seu email aqui...">
     
                     <label class="label_form" for="inputUrl">Link da foto do perfil</label>
-                    <input class="input section-2_form_photo" type="url" name="inputUrl" placeholder="Insira o link aqui...">
+                    <input class="input section-2_form_photo" type="url" name="inputUrl" id="avatar" placeholder="Insira o link aqui...">
 
                     <label class="label_form" for="inputPassword">Senha</label>
-                    <input class="input section-2_form_password" type="password" name="inputPassword" placeholder="Digite sua senha aqui...">
+                    <input class="input section-2_form_password" type="password" name="inputPassword" id="password" placeholder="Digite sua senha aqui...">
               
 
                     <button class="button login_register-btn section-2_form_btn" type="submit">Cadastrar</button>
                 </form>
-                <button class="button page_change-btn section-2_btn">Voltar para o login</button>
+                <button id="changePageTwo" class="button page_change-btn section-2_btn">Voltar para o login</button>
             </div>
         </section>
     </main>

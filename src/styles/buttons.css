@@ -21,6 +21,18 @@
     border-color: var(--brand200);
 }
 
+.btn_login_disabled{
+    color: var(--gray500);
+    background-color: 
+    #424f8f;
+}
+
+.btn_login_disabled:hover{
+    color: var(--gray500);
+    background-color: var(--brand100);
+    border-color: var(--brand100);
+}
+
 .page_change-btn{
     background-color: var(--gray900);
     border-color:  var(--gray600);

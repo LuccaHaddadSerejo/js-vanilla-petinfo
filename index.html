@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./src/styles/inputs.css">
     <link rel="stylesheet" href="./src/styles/modal.css">
     <link rel="stylesheet" href="./src/styles/displays.css">
+    <link rel="stylesheet" href="./src/styles/toast.css">
     <link rel="stylesheet" href="./src/styles/globalStyles.css">
     <link rel="stylesheet" href="./src/pages/login/index.css">
 
@@ -19,7 +20,7 @@
     <title>Petinfo - Login</title>
 </head>
 <body>
-    <main class="main flex_row align_center justify_center container">
+    <main class="main flex_row align_center justify_center container-2">
         <section class="section-1">
             <div class="section-1_div-1 flex_column">
                 <h1 class="main_title">Petinfo</h1>
@@ -38,23 +39,22 @@
         <section class="section-2">
             <div class="section-2_div-1 flex_column">
                 <h3 class="section-2_title">Login</h3>
-                <form class="flex_column login_form">
+                <form id="formLogin" class="flex_column login_form">
                     <label class="label_form" for="inputText">Email</label>
-                    <input class="input section-2_form_email" type="text" name="inputText" placeholder="Digite seu email aqui...">
-                    <span class="email_error hidden">O email está incorreto</span>
+                    <input class="input section-2_form_email" id="email" type="email" name="inputText" placeholder="Digite seu email aqui...">
 
                     <label class="label_form" for="inputPassword">Senha</label>
-                    <input class="input section-2_form_password" type="password" name="inputPassword" placeholder="Digite sua senha aqui...">
-                    <span class="password_error hidden">A senha está incorreta</span>
+                    <input class="input section-2_form_password" type="password" name="inputPassword" id="password" placeholder="Digite sua senha aqui...">
+                    <span class="password_error hidden">Email ou senha incorreto(a)</span>
 
-                    <button type="submit" class="button login_register-btn btn_form_login">Acessar</button>
+                    <button id="btnLogin" type="submit" class="button login_register-btn btn_form_login btn_login_disabled">Acessar</button>
                 </form>
                 <div class="section-2_div-2">
                     <span class="section-2_div-2_span">Ainda não possui conta?</span>
                     <p class="section-2_div-2_paragraph">Clicando no botão abaixo, você pode se cadastrar rapidamente.</p>      
                 </div>       
             </div>   
-            <button class="button page_change-btn btn_register">Cadastrar</button>     
+            <button id="changePageBtn" class="button page_change-btn btn_register">Cadastrar</button>     
         </section>
     </main>
     <script type="module" src="./src/pages/login/index.js"></script>

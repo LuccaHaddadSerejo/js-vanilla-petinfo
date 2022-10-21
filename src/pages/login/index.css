@@ -58,7 +58,7 @@
 
 .section-1_img-4{
     position: absolute; 
-    right: 115px;
+    right: 60px;
 }
 
 .section-2{
@@ -134,4 +134,8 @@
 }
 
 .btn_register{
+}
+
+.password_error{
+    color: var(--alert100);
 }

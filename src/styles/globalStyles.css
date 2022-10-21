@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-height: 100vh;
   font-family: 'Inter', sans-serif;
 }
 
@@ -47,6 +48,26 @@
   margin: 0 auto;
 }
 
+.container-2{
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
 .hidden{
   display: none;
+}
+
+.loading{
+  animation: spinner 1s infinite;
+}
+
+@keyframes spinner {
+  0% {
+      transform: rotate(0);
+  }
+
+  100%{
+      transform: rotate(360deg)
+  }
 }
