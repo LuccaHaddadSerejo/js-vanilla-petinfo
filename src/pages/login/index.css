@@ -111,6 +111,10 @@
 .btn_form_login{
 }
 
+.input_error{
+    border-color: var(--alert200);
+}
+
 .section-2_div-2{
     display: flex;
     flex-direction: column;

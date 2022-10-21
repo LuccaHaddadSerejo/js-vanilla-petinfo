@@ -1,10 +1,5 @@
 import {register} from "../../scripts/api.js";
 
-
-
-
-
-
 const registerEvent = () =>{
     const form = document.getElementById('registerForm')
     const htmlElements = [...form.elements]
@@ -33,6 +28,27 @@ const changePageToLogin = () =>{
     })
 }
 
+const inputValidation = () =>{
+    let newArr = []
+    const userInput = document.getElementById('username')
+    const userEmail = document.getElementById('email')
+    const userPhoto = document.getElementById('avatar')
+    const userPassword = document.getElementById('password')
+    const btn = document.getElementById('btnRegister')
+    newArr.push(userInput,userEmail,userPhoto,userPassword)
+    newArr.forEach(elt => {
+        elt.addEventListener('keyup', ()=>{
+            if(userInput.value.length > 0 && userEmail.value.length > 0 && userPhoto.value.length > 0 && userPassword.value.length > 0){
+                btn.disabled = false
+                btn.classList.remove('btn_login_disabled')
+            }else{
+                btn.disabled = true
+                btn.classList.add('btn_login_disabled')
+            }
+        })
+    })
+}
 
+inputValidation()
 registerEvent()
 changePageToLogin()

@@ -58,16 +58,3 @@
   display: none;
 }
 
-.loading{
-  animation: spinner 1s infinite;
-}
-
-@keyframes spinner {
-  0% {
-      transform: rotate(0);
-  }
-
-  100%{
-      transform: rotate(360deg)
-  }
-}

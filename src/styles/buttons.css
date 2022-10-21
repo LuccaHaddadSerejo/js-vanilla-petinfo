@@ -29,8 +29,9 @@
 
 .btn_login_disabled:hover{
     color: var(--gray500);
-    background-color: var(--brand100);
-    border-color: var(--brand100);
+    background-color: 
+    #424f8f;;
+    border-color: #424f8f;
 }
 
 .page_change-btn{
