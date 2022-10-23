@@ -12,7 +12,6 @@
     padding: 40px;
     position: absolute;
     width: 900px;
-    height: 500px;
     border-radius: var(--radius-2);
     background-color: var(--gray900);
     left: 0;
@@ -21,11 +20,65 @@
     margin: 0 auto;
 }
 
-.head_modal{
+.head_modal_fullPost{
+}
+
+.body_modal_fullPost{
+}
+
+.modal_fullPost_title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 30px;
+    margin-top: -15px;
+}
+
+.modal_fullPost_paragraph{
+    font-weight: 400;
+    font-size: 16px;    
+    line-height: 150%;
 }
 
 .modal_title{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--gray100);
 }
 
-.modal_close{
+.body_modal_edit{
+    gap: 20px;
 }
+
+.editTextInput{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray100);
+}
+
+.footer_modal_edit{
+    gap: 20px;
+}
+
+.body_modal_exclude{
+    gap: 15px;
+}
+
+.modal_exclude_title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+}
+
+.modal_exclude_paragraph{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.footer_modal_exclude{
+    gap: 20px;
+}
+

@@ -15,3 +15,10 @@
     height: 44px;
     padding: 10px 17px;
 }
+
+
+.editTA{
+    max-width: 100%;
+    height: fit-content;
+    padding: 20px;
+}

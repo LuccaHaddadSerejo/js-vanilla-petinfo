@@ -1,9 +1,8 @@
-import {login} from "../../scripts/api.js";
+import {getUser, login} from "../../scripts/api.js";
 
 const userLogin = () =>{
     const form = document.getElementById('testId')
     const htmlElements = [...form.elements]
-    console.log(htmlElements)
     
 
     form.addEventListener('submit', async (event)=>{
@@ -35,8 +34,7 @@ const validateInputs = () =>{
     const inputEmail = document.getElementById('email')
     const inputPassword = document.getElementById('password')
     const btn = document.getElementById('btnLogin')
-    newArr.push(inputEmail)
-    newArr.push(inputPassword)
+    newArr.push(inputEmail, inputPassword)
     newArr.forEach(element => {
         element.addEventListener('keyup', () =>{
             if(inputEmail.value.length > 0 && inputPassword.value.length > 0){
@@ -50,7 +48,9 @@ const validateInputs = () =>{
     })
 }
 
+
 validateInputs()
 userLogin()
 changePageToRegister()
 
+export {userLogin}

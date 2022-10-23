@@ -89,7 +89,7 @@
 }
 
 .modal_edit-btn{
-    width: 162px;
+    width: 174px;
     padding: 7px 20px;
     cursor: pointer;
 }
@@ -101,6 +101,7 @@
     color: var(--gray400);
     border-radius: var(--radius-2);
     cursor: pointer;
+    border: none;
 }
 
 .modal_close-btn{
@@ -115,7 +116,7 @@
 }
 
 .modal_exclude_post-btn{
-    width: 189px;
+    width: 198px;
     height: 38px;
     background-color: var(--alert100);
     border-radius: var(--radius-2);
@@ -127,4 +128,7 @@
     line-height: var(--line-height-6);
     cursor: pointer;
 }
+
+
+ 
 

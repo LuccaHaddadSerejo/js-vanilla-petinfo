@@ -1,3 +1,4 @@
+import { getLocalData } from "./localstorage.js"
 import { spinnerFunc } from "./spinner.js"
 import { createToast } from "./toast.js"
 
@@ -9,11 +10,10 @@ async function login(object){
         let data = await fetch(`${baseUrl}login`, {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",
+              "Content-Type": "application/json"
             },
             body: JSON.stringify(object),
             })
-            console.log(data)
     if(data.status == 200){
         const resp = await data.json()
         localStorage.setItem('user', JSON.stringify(resp))
@@ -33,7 +33,6 @@ async function login(object){
             inputEmail.classList.remove('input_error')
             inputPassword.classList.remove('input_error')
           }, 5000);
-        console.log("Usuário não encontrado")
     }
     }catch(err){
         console.log("Usuário não encontrado")
@@ -63,5 +62,25 @@ async function register(object){
     }
 }
 
+async function getUser(){
+    const localStorage = getLocalData()
 
-export {register, login}
+    try{
+    const data = await fetch (`${baseUrl}users/profile`, {
+        method:"GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.token}` 
+        }
+    })
+
+    const dataJson = await data.json()
+    console.log(dataJson)
+    return dataJson
+    }catch(err){
+        console.log(err)
+    }
+} 
+
+
+export {register, login, getUser}
