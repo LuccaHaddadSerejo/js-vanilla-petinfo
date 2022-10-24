@@ -17,8 +17,16 @@
 }
 
 
-.editTA{
-    max-width: 100%;
-    height: fit-content;
-    padding: 20px;
+.editTA_content{
+    width: 100%;
+    padding: 10px 20px 20px 20px;
+    resize: none;
+    height: 300px;
+}
+
+.editTA_title{
+    width: 100%;
+    padding: 10px 0 0 20px;
+    resize: none;
+    height: 45px;
 }

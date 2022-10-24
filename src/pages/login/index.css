@@ -43,8 +43,8 @@
     position: relative;
 }
 
-.section-1_img-1{
-}
+/* .section-1_img-1{
+} */
 
 .section-1_img-2{
     position: relative;
@@ -109,8 +109,8 @@
     margin-top: -14px;
 }
 
-.btn_form_login{
-}
+/* .btn_form_login{
+} */
 
 .input_error{
     border-color: var(--alert200);
@@ -138,8 +138,8 @@
     text-align: center;
 }
 
-.btn_register{
-}
+/* .btn_register{
+} */
 
 .password_error{
     color: var(--alert100);

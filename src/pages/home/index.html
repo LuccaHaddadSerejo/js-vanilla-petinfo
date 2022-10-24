@@ -23,12 +23,14 @@
     <header class="header container flex_row justify_between align_center">
         <h1 class="header_title">Petinfo</h1>
         <div class="header_div flex_row">
-            <button class="header_btn button create_post-btn">Criar publicação</button>
-            <img id="headerImg" class="header_img" src="" alt="">
-            <div class="exit_modal hidden">
-                <span class="user">@samuelleaoui</span>
-                <img class="img_exit" src="./Assets/img/sign-out-alt.svg" alt="">
-                <button class="btn_exit">Sair da conta</button>
+            <button id="createPostBtn" class="header_btn button create_post-btn">Criar publicação</button>
+            <div class="invis_div flex_row">
+                <img id="headerImg" class="header_img" src="" alt="">
+                <div class="exit_modal hidden">
+                    <span id="userAtSign" class="user">@samuelleaoui</span>
+                    <img class="img_exit" src="./Assets/img/sign-out-alt.svg" alt="">
+                    <button class="btn_exit">Sair da conta</button>
+                </div>
             </div>
         </div>
     </header>
@@ -39,126 +41,9 @@
     </div>
     <main class="main container"> 
         <ul id="completePostList" class="list_full">    
-            <li class="post flex_column">
-                <div class="post_div-1 flex_row justify_between">
-                    <div class="post_div-1_div-1 flex_row align_center">
-                        <img class="post_img" src="./Assets/img/Ellipse 2.svg" alt="">
-                        <span class="user_name">Samuel Leão</span>
-                        <div class="post_div-1_div-2">
-                            <span class="post_div-1_div-2_span">Outubro de 2022</span>
-                        </div>
-                    </div>   
-                    <div class="post_div-1_div-3 flex_row justify_between">
-                        <button class="post_div-1_div-2_btn-1 edit_post-btn">Editar</button>
-                        <button class="post_div-1_div-2_btn-2 edit_post-btn exclude_post-btn">Excluir</button>
-                    </div>
-                </div>
-                <h2 class="post_title">Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas</h2>
-                <p class="post_paragraph">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior...</p>
-                <button class="post_btn invis-btn">Acessar publicação</button>
-            </li>
-            <li class="post flex_column">
-                <div class="post_div-1 flex_row justify_between">
-                    <div class="post_div-1_div-1 flex_row align_center">
-                        <img class="post_img" src="./Assets/img/Ellipse 2.svg" alt="">
-                        <span class="user_name">Samuel Leão</span>
-                        <div class="post_div-1_div-2">
-                            <span class="post_div-1_div-2_span">Outubro de 2022</span>
-                        </div>
-                    </div>   
-                    <div class="post_div-1_div-3 flex_row justify_between">
-                        <button class="post_div-1_div-2_btn-1 edit_post-btn">Editar</button>
-                        <button class="post_div-1_div-2_btn-2 edit_post-btn exclude_post-btn">Excluir</button>
-                    </div>
-                </div>
-                <h2 class="post_title">Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas</h2>
-                <p class="post_paragraph">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior...</p>
-                <button class="post_btn invis-btn">Acessar publicação</button>
-            </li>
-            <li class="post flex_column">
-                <div class="post_div-1 flex_row justify_between">
-                    <div class="post_div-1_div-1 flex_row align_center">
-                        <img class="post_img" src="./Assets/img/Ellipse 2.svg" alt="">
-                        <span class="user_name">Samuel Leão</span>
-                        <div class="post_div-1_div-2">
-                            <span class="post_div-1_div-2_span">Outubro de 2022</span>
-                        </div>
-                    </div>   
-                    <div class="post_div-1_div-3 flex_row justify_between">
-                        <button class="post_div-1_div-2_btn-1 edit_post-btn">Editar</button>
-                        <button class="post_div-1_div-2_btn-2 edit_post-btn exclude_post-btn">Excluir</button>
-                    </div>
-                </div>
-                <h2 class="post_title">Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas</h2>
-                <p class="post_paragraph">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior...</p>
-                <button class="post_btn invis-btn">Acessar publicação</button>
-            </li>
         </ul>
     </main>
     <script type="module" src="./index.js"></script>
 </body>
 </html>
-
-
-<!-- 
-<div class="modal flex_column">
-    <div class="head_modal flex_row justify_between">
-    <h2 class="modal_title">Edição</h2>
-            <button class="modal_close-btn">X</button>
-        </div>
-        <div class="body_modal_edit flex_column">          
-            <label class="editLabel" for="modalPostTitle">Título do post</label>
-            <input class="input editTextInput" type="text" name="modalPostTitle" id="modalEditTitle">
-            <label class="editLabel" for="modalPostContent">Conteúdo do post</label>
-            <textarea class="editTextInput input editTA" name="modalPostContent" id="modalEditContent" cols="30" rows="10"></textarea>
-        </div>
-        <div class="footer_modal_edit flex_row justify_end">
-            <button class="button modal_cancel-btn">Cancelar</button>
-            <button class="button modal_edit-btn login_register-btn">Salvar alterações</button>
-        </div>
-    </div>
-
-
-    
-
-    <div class="modal_wrapper">
-    <div class="modal flex_column">
-        <div class="head_modal flex_row justify_between">
-            <div class="head_modal_div flex_row align_center"> 
-                <img class="post_img" src="./Assets/img/Ellipse 2.svg" alt="">
-                <span class="user_name">Samuel Leão</span>
-                <div class="post_div-1_div-2">
-                    <span class="post_div-1_div-2_span">Outubro de 2022</span>
-                </div>
-            </div>             
-            <button class="modal_close-btn">X</button>
-        </div>
-        <div class="body_modal_fullPost">
-            <h2 class="modal_fullPost_title">Outubro Rosa: Detalhes sobre a importância da prevenção do câncer de mama em cadelas e gatas</h2>
-            <p class="modal_fullPost_paragraph">Assim como em humanos, cadelas e gatas também podem desenvolver câncer de mama. Ainda hoje, para ambas as espécies, o câncer de mama tem maior incidência. Mesmo com a evolução da medicina veterinária e da oncologia, o câncer de mama muitas vezes não tem cura, sendo o tratamento paliativo uma alternativa para dar conforto às fêmeas. 
-                
-                Por isso, a conscientização sobre o tema é uma das ações de prevenção de maior importância, principalmente para a campanha do outubro rosa. Então como podemos ajudar a prevenir o câncer de mama em cadelas e gatas?
-                
-                Assim como outros tipos de câncer, o câncer de mama pode ter inúmeras causas. Entre  as mais comuns, temos fatores genéticos, como predisposição de algumas raças, exposição à poluição, tabagismo passivo, obesidade, além do fato de os pets estarem vivendo mais, o que também pode causar maior chances de tumores. No caso do câncer de mama, a influência hormonal é um dos fatores de maior contribuição para o aparecimento dessa doença.</p>
-        </div>
-    </div>
-</div>    -->
-
-
-<!-- <div class="modal_wrapper">
-    <div class="modal flex_column">
-        <div class="head_modal flex_row justify_between">
-        <h2 class="modal_title">Confirmação de exclusão</h2>
-                <button class="modal_close-btn">X</button>
-            </div>
-            <div class="body_modal_exclude flex_column">          
-                <h2 class="modal_exclude_title">Tem certeza que deseja excluir este post?</h2>
-                <p class="modal_exclude_paragraph">Esta ação não poderá ser desfeita, então pedimos cautela antes de concluir</p>
-            </div>
-            <div class="footer_modal_exclude flex_row">
-                <button class="button modal_cancel-btn">Cancelar</button>
-                <button class="modal_exclude_post-btn">Sim, excluir este post</button>
-            </div>
-        </div>
-</div>   -->
 

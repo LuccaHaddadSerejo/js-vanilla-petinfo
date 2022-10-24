@@ -82,3 +82,19 @@
     gap: 20px;
 }
 
+.exit_modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    background-color: var(--gray900);
+    height: 90px;
+    width: 215px;
+    left: 45px;
+    top: 41px;
+    border-radius: var(--radius-2);
+    border: 1px solid var(--gray600);
+}
+
+
+

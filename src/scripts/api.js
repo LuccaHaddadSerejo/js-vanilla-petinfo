@@ -66,7 +66,7 @@ async function getUser(){
     const localStorage = getLocalData()
 
     try{
-    const data = await fetch (`${baseUrl}users/profile`, {
+    const data = await fetch (`${baseUrl}users/profile`,{
         method:"GET",
         headers: {
             "Content-Type": "application/json",
@@ -75,12 +75,74 @@ async function getUser(){
     })
 
     const dataJson = await data.json()
-    console.log(dataJson)
     return dataJson
     }catch(err){
         console.log(err)
     }
 } 
 
+async function getPosts(){
+    const localStorage = getLocalData()
+    try {
+        const data = await fetch(`${baseUrl}posts`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}` 
+            }
+        })
+        const dataJson = await data.json()
+        return dataJson
+    } catch (err) {
+        console.log(err)
+    }
+}
 
-export {register, login, getUser}
+async function createNewPost(object){
+    const localStorage = getLocalData()
+    try {
+        const data = await fetch(`${baseUrl}posts/create`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
+            },
+            body: JSON.stringify(object)
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+async function editPost(object, id){
+    const localStorage = getLocalData()
+    try {
+        let data = await fetch(`${baseUrl}posts/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
+            },
+            body: JSON.stringify(object)
+        })
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function deletePost(id){
+    const localStorage = getLocalData()
+    try {
+        let data = await fetch(`${baseUrl}posts/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
+            },
+        })
+    }catch(err){
+        console.log(err)
+    }
+}
+
+export {register, login, getUser, getPosts, createNewPost, editPost, deletePost}

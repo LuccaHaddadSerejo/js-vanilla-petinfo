@@ -129,6 +129,24 @@
     cursor: pointer;
 }
 
+.btn_exit{
+    width: 100%;
+    max-height: 50%;
+    height: 50%;
+    border: none;
+    background-color: var(--gray900);
+    font-weight: var(--font-weigth-2);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-6);
+    color: var(--gray400);
+    cursor: pointer;
+}
+
+.btn_exit:hover{
+    background-color: var(--gray700);
+    color: var(--gray100);
+}
+
 
  
 

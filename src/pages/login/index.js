@@ -1,4 +1,4 @@
-import {getUser, login} from "../../scripts/api.js";
+import {login} from "../../scripts/api.js";
 
 const userLogin = () =>{
     const form = document.getElementById('testId')
