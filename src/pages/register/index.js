@@ -11,7 +11,8 @@ const registerEvent = () =>{
 
         htmlElements.forEach(elt => {
             if(elt.tagName == "INPUT" && elt.value.length !== 0){
-                body[elt.id] = elt.value    
+                body[elt.id] = elt.value
+                elt.value = ''    
             }
         })
         await register(body)

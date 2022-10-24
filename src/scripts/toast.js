@@ -23,7 +23,6 @@ const createToast = (title, text) => {
     toastLink.classList.add('toast_link')
     closeBtn.classList.add('modal_close-btn')
 
-
     closeBtn.addEventListener('click', ()=>{
         toastWrapper.remove()
     })
@@ -31,8 +30,7 @@ const createToast = (title, text) => {
     if(title == 'Usuário não encontrado'){
         toastImg.src = "/src/assets/img/Vector.svg"
         toastTitle.classList = 'toast_message_error'
-        toastLink.innerText = 'Ir para a página de cadastro'
-        toastLink.href = "../pages/register/index.html"
+        toastWrapper.classList = 'toast_wrapper animation-2'
     }else if(title == 'Usuário já cadastrado'){
         toastImg.src = "/src/assets/img/Vector.svg"
         toastTitle.classList = 'toast_message_error'
@@ -42,6 +40,10 @@ const createToast = (title, text) => {
         toastTitle.classList = 'toast_message_success'
         toastLink.innerText = 'Ir para a página de login'
         toastLink.href = "../../../index.html"
+    }else if(title == 'Post deletado com sucesso!'){
+        toastImg.src = "/src/assets/img/Group 17.svg"
+        toastTitle.classList = 'toast_message_success'
+        toastWrapper.classList = 'toast_wrapper animation-2'
     }
 
     toastParagraph.append(toastLink)

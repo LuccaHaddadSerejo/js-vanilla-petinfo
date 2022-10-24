@@ -44,6 +44,14 @@ const validateInputs = () =>{
                 btn.disabled = true
                 btn.classList.add('btn_login_disabled')
             }
+            if(inputEmail.value.length > 0 || inputPassword.value.length > 0){
+                const loginError = document.querySelector('.password_error')
+                const inputEmail = document.getElementById('email')
+                const inputPassword = document.getElementById('password')
+                inputEmail.classList.remove('input_error')
+                inputPassword.classList.remove('input_error')
+                loginError.classList.add('hidden')
+            }
         }) 
     })
 }

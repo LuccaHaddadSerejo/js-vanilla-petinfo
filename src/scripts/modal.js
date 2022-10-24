@@ -107,7 +107,7 @@ const newPostModal = () => {
     modalLabelOne.classList = 'editLabel'
     modalInputTitle.classList = 'input editTextInput'
     modalLabelTwo.classList = 'editLabel'
-    modalTextArea.classList = 'editTextInput input editTA'
+    modalTextArea.classList = 'editTextInput input editTA_content'
     modalDivThree.classList = 'footer_modal_edit flex_row justify_end'
     modalBtnCancel.classList = 'button modal_cancel-btn'
     modalBtnPublish.classList = 'button modal_edit-btn login_register-btn'
