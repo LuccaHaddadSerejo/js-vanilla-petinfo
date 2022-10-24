@@ -45,6 +45,8 @@ async function createPost(arr){
         const postTitle = document.createElement('h2')
         const postParagraph = document.createElement('p')
         const postBtnThree = document.createElement('button')
+
+        const date = new Date()
     
         postImg.src = post.user.avatar
         postUser.innerText = post.user.username
@@ -94,7 +96,7 @@ async function createPost(arr){
             
             modalImg.src = post.user.avatar
             modalUser.innerText = post.user.username
-            modalDate.innerText = 'Outubro de 2022'
+            modalDate.innerText = `${date.getMonth()} de ${date.getFullYear()}` 
             modalTitle.innerText = post.title
             modalContent.innerText = post.content
             modalCloseBtn.innerText = 'X'
