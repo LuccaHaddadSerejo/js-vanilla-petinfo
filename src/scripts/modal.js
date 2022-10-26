@@ -1,5 +1,5 @@
-import { getApiData } from "../pages/home/index.js"
-import { createNewPost, deletePost, getUser} from "./api.js"
+import { getApiData, getCorrectDate } from "../pages/home/index.js"
+import { createNewPost, deletePost, editPost, getUser} from "./api.js"
 
 
 async function modalExit(){
@@ -21,7 +21,7 @@ async function modalExit(){
     
     btn.addEventListener('click', ()=>{
         window.location.replace("../../../index.html")
-        localStorage.setItem('user', JSON.stringify(''))
+        localStorage.removeItem('user')
     })
 } 
 
@@ -39,15 +39,17 @@ const showFullPostModal = (object) =>{
     const modalDivFour = document.createElement('div')
     const modalTitle = document.createElement('h2')
     const modalContent = document.createElement('p')
+    const date = new Date()
     
     modalImg.src = object.user.avatar
     modalUser.innerText = object.user.username
-    modalDate.innerText = 'Outubro de 2022'
+    getCorrectDate(modalDate, date)
     modalTitle.innerText = object.title
     modalContent.innerText = object.content
+    modalCloseBtn.innerText = 'X'
 
     wrapper.classList = 'modal_wrapper'
-    modalContainer.classList = 'modal flex_column'
+    modalContainer.classList = 'modal flex_column modal_animation'
     modalDivOne.classList = 'head_modal flex_row justify_between'
     modalDivTwo.classList = 'head_modal_div flex_row align_center'
     modalImg.classList = 'post_img'
@@ -74,6 +76,7 @@ const showFullPostModal = (object) =>{
 
 
 const newPostModal = () => {
+    const listPosts = document.getElementById('completePostList')
     const wrapper = document.createElement('div')
     const modalContainer = document.createElement('div')
     const modalDivOne = document.createElement('div')
@@ -98,8 +101,11 @@ const newPostModal = () => {
     modalBtnCancel.innerText = 'Cancelar'
     modalBtnPublish.innerText = 'Publicar'
 
+    modalInputTitle.id = "title"
+    modalTextArea.id = "content"
+
     wrapper.classList = 'modal_wrapper'
-    modalContainer.classList = 'modal flex_column'
+    modalContainer.classList = 'modal flex_column modal_animation'
     modalDivOne.classList = 'head_modal flex_row justify_between'
     modalTitle.classList = 'modal_title'
     modalCloseBtn.classList = 'modal_close-btn'
@@ -112,13 +118,6 @@ const newPostModal = () => {
     modalBtnCancel.classList = 'button modal_cancel-btn'
     modalBtnPublish.classList = 'button modal_edit-btn login_register-btn'
 
-    wrapper.id = 'teste'
-    modalForm.id = "formTest"
-    modalInputTitle.id = "title"
-    modalTextArea.id = "content"
-    modalBtnPublish.id = "send"
-
-
     modalCloseBtn.addEventListener('click', (event)=>{
         event.preventDefault()
         wrapper.remove()
@@ -126,6 +125,25 @@ const newPostModal = () => {
 
     modalBtnCancel.addEventListener('click', (event)=>{
         event.preventDefault()
+        wrapper.remove()
+    })
+
+    modalBtnPublish.addEventListener('click', async(event)=>{
+        event.preventDefault()
+        const elements = [...modalForm.elements]
+        console.log(elements)
+        listPosts.innerHTML = ''
+
+        const newPostBody = {}
+
+        elements.forEach(elt =>{
+            if(elt.value != 0){
+                newPostBody[elt.id] = elt.value
+            }
+        })
+
+        await createNewPost(newPostBody)
+        getApiData()
         wrapper.remove()
     })
 
@@ -137,7 +155,8 @@ const newPostModal = () => {
     return wrapper
 }
 
-const editPostModal = () => {
+const editPostModal = (object) => {
+    const listPosts = document.getElementById('completePostList')
     const wrapper = document.createElement('div')
     const modalContainer = document.createElement('div')
     const modalDivOne = document.createElement('div')
@@ -145,36 +164,42 @@ const editPostModal = () => {
     const modalCloseBtn = document.createElement('button')
     const modalForm = document.createElement('form')
     const modalLabelOne = document.createElement('label')
-    const modalInputTitle = document.createElement('input')
+    const modalInputTitle = document.createElement('textarea')
     const modalLabelTwo = document.createElement('label')
     const modalTextArea = document.createElement('textarea')
     const modalDivThree = document.createElement('div')
     const modalBtnCancel = document.createElement('button')
-    const modalBtnPublish = document.createElement('button')
+    const modalBtnEdit = document.createElement('button')
     
     
     modalTitle.innerText = 'Edição'
     modalCloseBtn.innerText = 'X'
     modalLabelOne.innerText = 'Título do post'
-    modalInputTitle.innerText = post.title
+    modalInputTitle.innerText = object.title
     modalLabelTwo.innerText = 'Conteúdo do post'
-    modalTextArea.innerText = post.content
+    modalTextArea.innerText = object.content
     modalBtnCancel.innerText = 'Cancelar'
-    modalBtnPublish.innerText = 'Salvar'
+    modalBtnEdit.innerText = 'Salvar'
 
     wrapper.classList = 'modal_wrapper'
-    modalContainer.classList = 'modal flex_column'
+    modalContainer.classList = 'modal flex_column modal_animation'
     modalDivOne.classList = 'head_modal flex_row justify_between'
     modalTitle.classList = 'modal_title'
     modalCloseBtn.classList = 'modal_close-btn'
     modalForm.classList = 'body_modal_edit flex_column'
     modalLabelOne.classList = 'editLabel'
-    modalInputTitle.classList = 'input editTextInput'
+    modalInputTitle.classList = 'input editTextInput editTA_title'
     modalLabelTwo.classList = 'editLabel'
-    modalTextArea.classList = 'editTextInput input editTA'
+    modalTextArea.classList = 'ditTextInput input editTA_content'
     modalDivThree.classList = 'footer_modal_edit flex_row justify_end'
     modalBtnCancel.classList = 'button modal_cancel-btn'
-    modalBtnPublish.classList = 'button modal_edit-btn login_register-btn'
+    modalBtnEdit.classList = 'button modal_edit-btn login_register-btn'
+
+    wrapper.id = 'wrapperEdit'
+    modalForm.id = "formEdit"
+    modalBtnEdit.id = "confirmEdit"
+    modalInputTitle.id = "title"
+    modalTextArea.id = "content"
 
     modalCloseBtn.addEventListener('click', (event)=>{
         event.preventDefault()
@@ -186,15 +211,32 @@ const editPostModal = () => {
         wrapper.remove()
     })
 
+    modalBtnEdit.addEventListener('click', async ()=>{
+        const elements = [...modalForm.elements]
+        listPosts.innerHTML = ''
+
+        const editBody = {}
+
+        elements.forEach(elt =>{
+            if(elt.tagName == "TEXTAREA" && elt.value != 0){
+                    editBody[elt.id] = elt.value
+                }
+            })
+    
+        await editPost(editBody, object.id)
+        getApiData()
+        wrapper.remove()
+    })
+
     modalDivOne.append(modalTitle, modalCloseBtn)
     modalForm.append(modalLabelOne, modalInputTitle, modalLabelTwo, modalTextArea)
-    modalDivThree.append(modalBtnCancel, modalBtnPublish)
+    modalDivThree.append(modalBtnCancel, modalBtnEdit)
     modalContainer.append(modalDivOne, modalForm, modalDivThree)
     wrapper.append(modalContainer)
     return wrapper
 }
 
-const ExcludePostModal = () =>{
+const ExcludePostModal = (object) =>{
     const wrapper = document.createElement('div')
     const modalContainer = document.createElement('div')
     const modalDivOne = document.createElement('div')
@@ -206,9 +248,10 @@ const ExcludePostModal = () =>{
     const modalDivThree = document.createElement('div')
     const modalBtnCancel = document.createElement('button')
     const modalBtnDelete = document.createElement('button')
+    
 
     wrapper.classList = 'modal_wrapper'
-    modalContainer.classList = 'modal flex_column'
+    modalContainer.classList = 'modal flex_column modal_animation'
     modalDivOne.classList = 'head_modal flex_row justify_between'
     modalTitle.classList = 'modal_title'
     modalCloseBtn.classList = 'modal_close-btn'
@@ -239,6 +282,15 @@ const ExcludePostModal = () =>{
         wrapper.remove()
     })
 
+    modalBtnDelete.addEventListener('click', async (event)=>{
+        const listPosts = document.getElementById('completePostList')
+        event.preventDefault()  
+        listPosts.innerHTML = ''
+        await deletePost(object.id)
+        getApiData()
+        wrapper.remove()
+    })
+
     modalDivOne.append(modalTitle, modalCloseBtn)
     modalDivTwo.append(modalMessage, modalParagraph)
     modalDivThree.append(modalBtnCancel, modalBtnDelete)
@@ -247,9 +299,14 @@ const ExcludePostModal = () =>{
     return wrapper
 }
 
-const renderFullPostModal = () =>{
+const renderFullPostModal = (object) =>{
     const main = document.querySelector('.main')
-    main.append(showFullPostModal())
+    main.append(showFullPostModal(object))
+}
+
+const renderEditPost = (object) =>{
+    const main = document.querySelector('.main')
+    main.append(editPostModal(object))
 }
 
 const renderNewPostModal = () =>{
@@ -257,55 +314,15 @@ const renderNewPostModal = () =>{
     main.append(newPostModal())
 }
 
-const renderExcludePostModal = () =>{
+const renderExcludePostModal = (object) =>{
     const main = document.querySelector('.main')
-    main.append(ExcludePostModal())
-}
-
-function sendPost(){
-    const listPosts = document.getElementById('completePostList')
-    const form = document.getElementById('formTest')
-    const btn = document.getElementById('send')
-    const wrapper = document.getElementById('teste')
-    const elements = [...form.elements]
-
-    const newPostBody = {}
-
-
-    btn.addEventListener('click', async (event)=>{
-        event.preventDefault()
-        listPosts.innerHTML = ''
-        elements.forEach(elt =>{
-            if(elt.tagName != "LABEL" && elt.value != 0){
-                newPostBody[elt.id] = elt.value
-            }
-        })
-
-        await createNewPost(newPostBody)
-        getApiData()
-        wrapper.remove()
-    })
-}
-
-function excludePost(){
-    const listPosts = document.getElementById('completePostList')
-    const btn = document.getElementById('confirmDelete')
-    const wrapper = document.getElementById('deleteWrapper')
-
-    btn.addEventListener('click', async (event)=>{
-        event.preventDefault()
-        listPosts.innerHTML = ''
-        await deletePost(post.id)
-        getApiData()
-        wrapper.remove()
-    })
+    main.append(ExcludePostModal(object))
 }
 
 export {
     renderFullPostModal, 
     renderNewPostModal, 
     renderExcludePostModal, 
-    sendPost, 
+    renderEditPost,
     modalExit,
-    excludePost
 }

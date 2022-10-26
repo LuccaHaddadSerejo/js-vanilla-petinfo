@@ -12,6 +12,8 @@
     padding: 40px;
     position: absolute;
     width: 900px;
+    max-height: 85vh;
+    overflow: auto;
     border-radius: var(--radius-2);
     background-color: var(--gray900);
     left: 0;
@@ -20,11 +22,11 @@
     margin: 0 auto;
 }
 
-.head_modal_fullPost{
+/* .head_modal_fullPost{
 }
 
 .body_modal_fullPost{
-}
+} */
 
 .modal_fullPost_title{
     font-weight: 600;
@@ -95,6 +97,16 @@
     border-radius: var(--radius-2);
     border: 1px solid var(--gray600);
 }
+
+.modal_animation{
+    animation: modalAnimation 400ms ease-in-out forwards;
+}
+
+@keyframes modalAnimation{
+    0%   {transform: translateY(-100px);}
+    100% {transform: translateY(0px);}
+}
+
 
 
 

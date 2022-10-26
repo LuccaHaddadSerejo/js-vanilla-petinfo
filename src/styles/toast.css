@@ -62,7 +62,7 @@
     height: 24px;
 }
 
-@keyframes toastAnimationOne {
+@keyframes toastAnimationOne {  
     0%   {right: 30px; bottom:-100px}
     100% {right: 30px; bottom:10px}
 }

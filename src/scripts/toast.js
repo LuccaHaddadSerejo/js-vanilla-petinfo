@@ -38,8 +38,6 @@ const createToast = (title, text) => {
     }else if(title == 'Sua conta foi criada com sucesso!'){
         toastImg.src = "/src/assets/img/Group 17.svg"
         toastTitle.classList = 'toast_message_success'
-        toastLink.innerText = 'Ir para a página de login'
-        toastLink.href = "../../../index.html"
     }else if(title == 'Post deletado com sucesso!'){
         toastImg.src = "/src/assets/img/Group 17.svg"
         toastTitle.classList = 'toast_message_success'

@@ -52,11 +52,14 @@ async function register(object){
         if(data.status == 200){
             setTimeout(() => {  
                 const btn = document.getElementById('btnLogin')
-                createToast('Sua conta foi criada com sucesso!', 'Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login: ')
+                createToast('Sua conta foi criada com sucesso!', 'Você será redirecionado para a página de login em alguns segundos.')
                 btn.innerText = 'Cadastrar'
                 btn.disabled = true
                 btn.classList.add('btn_login_disabled') 
-              }, 3000);
+            }, 3000);
+            setTimeout(() => {  
+                window.location.replace('../../../index.html')
+            }, 6000);   
         }else{
             setTimeout(() => {  
                 const btn = document.getElementById('btnLogin')
@@ -64,7 +67,7 @@ async function register(object){
                 btn.innerText = 'Cadastrar'
                 btn.disabled = true
                 btn.classList.add('btn_login_disabled') 
-              }, 3000);
+              }, 5000);
         }
     }catch(err){
         console.log('Usuário já cadastrado')
