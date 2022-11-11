@@ -42,6 +42,9 @@ const showFullPostModal = (object) =>{
     const date = new Date()
     
     modalImg.src = object.user.avatar
+    modalImg.addEventListener('error', () => {
+        modalImg.src ='../assets/img/brokenImg.png'
+    })
     modalUser.innerText = object.user.username
     getCorrectDate(modalDate, date)
     modalTitle.innerText = object.title

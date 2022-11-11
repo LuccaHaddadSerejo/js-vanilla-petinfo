@@ -5,7 +5,6 @@ import {renderNewPostModal, modalExit, renderFullPostModal, renderEditPost, rend
 
 function verifyPermission(){
     const user = getLocalData()
-    console.log(user)
     if(user == []){
         window.location.replace('../../../index.html')
     }
@@ -18,6 +17,9 @@ async function createHeader(){
     const btnCreate = document.getElementById('createPostBtn')
     const imgUser = document.getElementById('headerImg')
     imgUser.src = user.avatar
+    imgUser.addEventListener('error', () => {
+        imgUser.src ='../../assets/img/brokenImg.png'
+    })
 
     btnCreate.addEventListener('click', ()=>{
         renderNewPostModal()
@@ -100,6 +102,9 @@ async function createPost(arr){
         const date = new Date()
 
         postImg.src = post.user.avatar
+        postImg.addEventListener('error', () => {
+            postImg.src ='../../assets/img/brokenImg.png'
+        })
         postUser.innerText = post.user.username
         postBtnThree.innerText = 'Acessar publicação'   
         getCorrectDate(postDate, date)
